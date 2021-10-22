@@ -1,0 +1,10 @@
+<sly data-sly-use.footer="com.ucsexercise.seba.core.models.Header">
+    <div data-sly-test="${!footer.linkDetailsWithMap}">Add some text</div>
+    <div class="footer__utils"
+        data-sly-list.item="${footer.linkDetailsWithMap}"
+    >
+        <a href="${item.link}" target="_blank">
+            ${item.title}
+        </a>
+    </div>
+</sly>

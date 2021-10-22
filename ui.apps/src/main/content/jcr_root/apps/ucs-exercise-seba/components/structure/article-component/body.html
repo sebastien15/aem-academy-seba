@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <sly
+      data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    />
+    <sly data-sly-include="/libs/wcm/core/components/init/init.jsp" />
+    <sly
+      data-sly-call="${clientlib.css @ categories=['ucs-exercise.seba','ucs-exercise.heroBanner','ucs-exercise.magazineArticles']}"
+    />
+
+    <sly
+      data-sly-resource="${'header' @ resourceType='ucs-exercise-seba/components/content/exer1-header'}"
+    />
+
+    <main class="main-content welcome-page ucg-icons__newPackage">
+      <sly
+        data-sly-resource="${'parsys' @ resourceType='wcm/foundation/components/parsys'}"
+      />
+    </main>
+
+    <sly
+      data-sly-resource="${'exer1-footer' @ resourceType='ucs-exercise-seba/components/content/exer1-footer'}"
+    />
+    <sly
+      data-sly-call="${clientlib.js @ categories=['ucs-exercise.seba','ucs-exercise.heroBanner','ucs-exercise.magazineArticles']}"
+    />
+  </body>
+</html> 

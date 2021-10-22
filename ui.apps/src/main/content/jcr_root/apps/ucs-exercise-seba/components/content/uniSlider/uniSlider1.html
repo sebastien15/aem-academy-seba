@@ -1,0 +1,186 @@
+<!-- ******************* START HERO BANNER ******************* -->
+<h1>${properties.title}
+</h1>
+<div data-sly-repeat="${resource}">
+  "here is our resource" ${item.createdBy}
+</div>
+
+<div class="heroBanner-welcome">
+    <div class="heroBanner__main container-fixed">
+      <div class="heroBanner__container swiper-container">
+        <div data-sly-test="${wcmmode.edit && !resource.children}"
+          style="text-align: center;color: #31cd65;font-weight: bold">
+          Add your first slider
+        </div>
+        <div class="heroBanner__wrapper swiper-wrapper" >
+        <sly data-sly-repeat="${resource.children}" data-sly-unwrap="${true}">
+          <sly data-sly-test="${item.imageDesktopPath && item.titleWelcome || item.titleArticle || item.titleGetInvolved }") data-sly-unwrap="${true}">
+            <sly data-sly-test.var1="${item.slideType == 'welcome-slide' || item.slideType == 'welcome-slide-1' || item.slideType == 'welcome-slide-2' || item.slideType == 'welcome-slide-3' || item.slideType == 'welcome-slide-4' || item.slideType == 'welcome-slide-5' }">
+              <div class="heroBanner__slide heroBanner__slide--type1 heroBanner__slide--video gradient gradient--type-one swiper-slide"
+            data-bg="${item.imageDesktopPath}"
+                data-bg-mobile="${item.imageMobilePath}"
+              >
+                  <div class="hero__mask text--subtitle" data-mask="light">
+                    <img data-sly-test="${item.logo == 'black'}"
+                      class="mask__logo"
+                      src="/apps/ucs-exercise-seba/clientlibs/clientlib-heroBanner/img/newDark.png"
+                      alt="logo__mask"
+                    />
+                    <img data-sly-test="${item.logo == 'white'}"
+                      class="mask__logo"
+                      src="/apps/ucs-exercise-seba/clientlibs/clientlib-heroBanner/img/newLight.png"
+                      alt="logo__mask"
+                    />
+                  </div>
+                  <div class="hero container">
+                    <div class="hero__title text--headline">
+                      <p>${item.titleWelcome}</p>
+                      <p>${item.abstractWelcome}</p>
+                    </div>
+                    <p class="hero_/apps/ucs-exercise/clientlibs/clientlib-heroBanner/img/newDark.png_subtitle text--body">
+                      ${item.abstractWelcome}
+                    </p>
+                  </div>
+              </div>
+            </sly>
+            <sly data-sly-test.var2="${item.slideType == 'article-slide' || item.slideType == 'article-slide-1' || item.slideType == 'article-slide-2' || item.slideType == 'article-slide-3' || item.slideType == 'article-slide-4' || item.slideType == 'article-slide-5' }">
+              <!-- TYPE 2 -->
+                <div class="heroBanner__slide heroBanner__slide--type2 gradient gradient--type-two swiper-slide"
+                data-bg="${item.imageDesktopPath}"
+                data-bg-mobile="${item.imageMobilePath}"
+              >
+                <div class="hero__mask text--subtitle" data-mask="dark">
+                  <img data-sly-test="${item.logo == 'black'}"
+                    class="mask__logo"
+                    src="/content/dam/ucs-exercise-seba/newDark.png"
+                    alt="logo__mask"
+                  />
+                  <img data-sly-test="${item.logo == 'white'}"
+                    class="mask__logo"
+                    src="/content/dam/ucs-exercise-seba/newLight.png"
+                    alt="logo__mask"
+                  />
+                </div>
+                <div class="hero container">
+                  <div class="hero__info">
+                    <p class="hero__title text--headline">
+                      ${item.titleArticle}
+                    </p>
+                    <div class="hero__lables">
+                      <span class= "hero__lable text--labelBg bg--lipstick">OUR PEOPLE</span>
+                      <div class="hero__hashtags hashTags">
+                          <div class="hero__hashtag hashTag" data-sly-repeat="${item.tags}">
+                             #${item}
+                          </div>
+                          <div class="more-hashtag">
+                            <span class="oval"></span>
+                            <span class="oval"></span>
+                            <span class="oval"></span>
+                          </div>
+                      </div>
+                    </div>
+
+                    <p class="hero__date text--subtitle">
+                      ${item.date}
+                    </p>
+                    <p class="hero__desc text--body">
+                      ${item.abstractArticle}
+                    </p>
+                    <a class="hero__button button button--bg" href="#">
+                      Discover more
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </sly>
+            <sly data-sly-test.var3="${item.slideType == 'get-involved-slide' || item.slideType == 'get-involved-slide-1' || item.slideType == 'get-involved-slide-2' || item.slideType == 'get-involved-slide-3' || item.slideType == 'get-involved-slide-4' || item.slideType == 'get-involved-slide-5' }">
+              <!-- TYPE 3 -->
+              <div class="heroBanner__slide heroBanner__slide--type3 gradient gradient--type-three swiper-slide"
+                data-bg="${item.imageDesktopPath}"
+                data-bg-mobile="${item.imageMobilePath}"
+              >
+                <div class="hero__mask text--subtitle" data-mask="light">
+                  <img data-sly-test="${item.logo == 'black'}"
+                    class="mask__logo"
+                    src="/content/dam/ucs-exercise-seba/newDark.png"
+                    alt="logo__mask"
+                  />
+                  <img data-sly-test="${item.logo == 'white'}"
+                    class="mask__logo"
+                    src="/content/dam/ucs-exercise-seba/newLight.png"
+                    alt="logo__mask"
+                  />
+                </div>
+                <div class="hero container">
+                  <div class="hero__info">
+                    <p class="hero__title text--headline">${item.titleGetInvolved}</p>
+                    <p class="hero__subtitle text--paragraph-title">
+                      ${item.subTitleGetInvolved}
+                    </p>
+                    <p class="hero__desc text--body">
+                      ${item.descriptionGetInvolved}
+                    </p>
+                    <a class="hero__button button button--bg" href="#">
+                      Discover more
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </sly>    
+          </sly>
+        </sly>
+          
+          
+        </div>
+        <div data-pagination data-hero-pagination class="heroBanner__pagination"></div>
+        <div data-arrows class="heroBanner__arrows">
+          <div data-prev-small class="icon-down"></div>
+          <div data-number>
+            <span class="current">1</span> / <span class="total">3</span>
+          </div>
+          <div data-next-small class="icon-down"></div>
+        </div>
+      </div>
+      <div class="heroBanner__modal">
+        <div class="modal">
+          <div class="modal__info">
+            <div class="modal__involved text--paragraph-title">
+              <div class="icon icon-info"></div>
+              Get involved
+            </div>
+            <p class="modal__title text--headline">Autumn photo campaign</p>
+            <div class="modal__text text--body">
+              <p>
+                Our new photography campaign celebrates autumn, the season
+                that marks the transition from summer to winter.
+              </p>
+              <p>
+                Please send us your photos that capture your experience of
+                Autumn. This could be images of the season’s warm colours or
+                the unique traditions and special activities that represent
+                the time of year in your city, country and culture.
+              </p>
+              <p>
+                Please remember: if you are sending us a photograph of a
+                person, please ask them to complete our UniCredit Release
+                Form. You can download a copy from this
+                <a href="#">link</a>.
+              </p>
+              <p>We look forward to receiving your photos!</p>
+              <p>
+                Please send your photo and caption to
+                <a href="mailto:onebank@unicreditgroup.eu">onebank@unicreditgroup.eu</a>
+              </p>
+            </div>
+          </div>
+          <div class="modal__bg" data-bg="./components/heroBanner__welcome/img/hero_modal_desk.jpg"
+            data-bg-mobile="./components/heroBanner__welcome/img/hero_modal_desk.jpg"></div>
+        </div>
+        <div class="modal__top-bar container">
+          <img src="./components/heroBanner__welcome/img/logo_unicredit.svg" alt="logo" />
+          <div class="icon icon-close modal__close"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ******************* END HERO BANNER ******************* -->

@@ -1,0 +1,6 @@
+#base=js
+
+header.js
+footer.js
+common.js
+relatedHashtag.js

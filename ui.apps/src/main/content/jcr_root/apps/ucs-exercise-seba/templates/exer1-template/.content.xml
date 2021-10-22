@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+ xmlns:cq="http://www.day.com/jcr/cq/1.0"
+ xmlns:jcr="http://www.jcp.org/jcr/1.0" jcr:description="Archyetype Content template" jcr:primaryType="cq:Template" 
+ jcr:title="ucs exer1 template" allowedPaths="[/content(/.*)?]" ranking="{Long}1">
+ <jcr:content jcr:primaryType="cq:PageContent" sling:resourceType="ucs-exercise-seba/components/structure/exer1-component"/>
+</jcr:root>
